@@ -1,128 +1,148 @@
 # dumb lang 🧠
 
-A tiny esoteric programming language written in C.
+*A tiny esoteric programming language written in C.*
 
-## Overview
+---
 
-dumb lang is a lightweight esoteric programming language and interpreter written in C.
-It was built to explore low-level programming, interpreters, and language design.
+## 🚀 Overview
+
+**dumb lang** is a lightweight esoteric programming language and interpreter written in C.
+It was built to explore **low-level programming, interpreters, and language design**.
 
 Programs operate on a fixed-size memory tape and use single-character instructions for arithmetic, pointer movement, and I/O.
 
-## Features
+---
 
-  Interpreter written fully in C (no external deps)
-  
-  Fixed memory tape of 3000 integer cells
-  
-  Integer output (!) and ASCII output (c, with an offset)
-  
-  Integer input (i)
-  
-  Custom .dumb file extension with validation
-  
-  Basic error handling for invalid operators / file types
-  
-  Portable: compiles with gcc in seconds
+## ✨ Features
 
-## Installation
+* 📝 Written fully in **C** (no external dependencies)
+* 📦 Fixed memory tape of **3000 integer cells**
+* 🔢 Integer output (`!`) and ASCII output (`c`, with offset)
+* ⌨️ Integer input (`i`)
+* 📂 Custom `.dumb` file extension with validation
+* ⚠️ Basic error handling for invalid operators / file types
+* ⚡ Portable: compiles with `gcc` in seconds
+
+---
+
+## ⚙️ Installation
+
+```bash
 git clone https://github.com/yourusername/dumb-lang.git
 cd dumb-lang
 gcc dumb.c -o dumb
+```
 
-## Usage
+---
 
-Run the interpreter with a .dumb file:
+## ▶️ Usage
 
+Run the interpreter with a `.dumb` program:
+
+```bash
 ./dumb program.dumb
-
+```
 
 View the built-in docs:
 
+```bash
 ./dumb docs
-
-Language Specification
-
-Memory: array of 3000 signed integers, pointer starts at index 0.
-ASCII printing: c prints cell_value + 32 as a character (so 0 → " ", 1 → "!", etc.).
-
-### Operator	Description
->	Move pointer right
-<	Move pointer left
-+	Increment current cell
--	Decrement current cell
-!	Print current cell as integer
-c	Print current cell as ASCII (value + 32)
-n	Print newline
-i	Read an integer into current cell
-.	End program (exit)
-1–9	Add that numeric value to current cell
-_1–_9	Subtract that numeric value from current cell
-
-### Notes
-• The digit 0 is not interpreted (only 1–9).
-• Unknown characters (spaces/newlines) are ignored, so you can format your code.
-
-## Examples
-Print “HI”
-
-hi.dumb
-
 ```
-9 9 9 9 4       c      # 36+4 = 40 → 40+32 = 72 = 'H'
-> 9 9 9 9 5     c      # 36+5 = 41 → 41+32 = 73 = 'I'
+
+---
+
+## 📖 Language Specification
+
+**Memory:** Array of 3000 signed integers (pointer starts at index `0`).
+**ASCII printing:** `c` prints `cell_value + 32` as a character (so `0 → " "`, `1 → "!"`, etc.).
+
+| Operator | Description                                       |
+| -------- | ------------------------------------------------- |
+| `>`      | Move pointer right                                |
+| `<`      | Move pointer left                                 |
+| `+`      | Increment current cell                            |
+| `-`      | Decrement current cell                            |
+| `!`      | Print current cell as integer                     |
+| `c`      | Print current cell as ASCII (`value + 32`)        |
+| `n`      | Print newline                                     |
+| `i`      | Read integer input into current cell              |
+| `.`      | End program (exit)                                |
+| `1–9`    | Add numeric value directly to current cell        |
+| `_1–_9`  | Subtract numeric value directly from current cell |
+
+**Notes:**
+
+* `0` is ignored (only `1–9` are valid digits).
+* Unknown characters (spaces/newlines) are ignored → you can format code for readability.
+
+---
+
+## 💡 Examples
+
+### Print “HI”
+
+**hi.dumb**
+
+```dumb
+9 9 9 9 4   c     # (36+4)+32 = 72 → 'H'
+> 9 9 9 9 5 c     # (36+5)+32 = 73 → 'I'
 n
 .
 ```
 
-Note: Comments are not supported
+> ⚠️ Note: Comments are **not supported** — they are added here just for illustration.
 
 Run:
 
-`
+```bash
 ./dumb hi.dumb
-`
+```
 
 Output:
 
-`
+```
 HI
-`
+```
 
-Echo an integer and its ASCII (simple I/O)
+---
 
-echo.dumb
+### Echo an integer and its ASCII
 
-`
+**echo.dumb**
+
+```dumb
 i ! n c n .
-`
+```
 
-Prompts for an integer input, prints it as a number, newline, then as ASCII (value + 32), newline.
+Behavior:
 
-## Roadmap
+* Prompts for integer input
+* Prints it as a number → newline → its ASCII (`value + 32`) → newline
 
-  Loop constructs (e.g., [ and ])
-  
-  Dynamic tape growth
-  
-  Better error messages with line/column info
-  
-  String literals
-  
-  Optional “strict mode” to warn on unknown characters
+---
 
-## Known Limitations
+## 🛣️ Roadmap
 
-  No control flow yet (no loops/branches)
-  
-  Only single-digit increment/decrement literals (1–9, _1–_9)
-  
-  ASCII printing uses an offset of +32 by design
+* 🔄 Loop constructs (`[` and `]`)
+* 📈 Dynamic tape growth
+* 🛑 Better error messages (line/column info)
+* 📝 String literals
+* ⚙️ Optional “strict mode” for warnings on unknown characters
 
-## Author
+---
 
-Hamza Albanna
+## ⚠️ Known Limitations
 
-LinkedIn: https://linkedin.com/in/your-link
+* ❌ No control flow yet (no loops/branches)
+* 🔢 Only single-digit increments/decrements (`1–9`, `_1–_9`)
+* 🔤 ASCII printing uses a fixed offset of `+32`
 
-Codeforces: https://codeforces.com/profile/your-handle
+---
+
+## 👤 Author
+
+**Hamza Albanna**
+
+* [LinkedIn](https://linkedin.com/in/your-link)
+* [Codeforces](https://codeforces.com/profile/your-handle)
+
