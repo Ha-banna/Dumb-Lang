@@ -11,19 +11,19 @@ Programs operate on a fixed-size memory tape and use single-character instructio
 
 Features
 
-Interpreter written fully in C (no external deps)
-
-Fixed memory tape of 3000 integer cells
-
-Integer output (!) and ASCII output (c, with an offset)
-
-Integer input (i)
-
-Custom .dumb file extension with validation
-
-Basic error handling for invalid operators / file types
-
-Portable: compiles with gcc in seconds
+  Interpreter written fully in C (no external deps)
+  
+  Fixed memory tape of 3000 integer cells
+  
+  Integer output (!) and ASCII output (c, with an offset)
+  
+  Integer input (i)
+  
+  Custom .dumb file extension with validation
+  
+  Basic error handling for invalid operators / file types
+  
+  Portable: compiles with gcc in seconds
 
 Installation
 git clone https://github.com/yourusername/dumb-lang.git
@@ -67,7 +67,7 @@ Examples
 Print “HI”
 
 hi.dumb
-
+`
 9 9 9 9 4       c      # 36+4 = 40 → 40+32 = 72 = 'H'
 > 9 9 9 9 5     c      # 36+5 = 41 → 41+32 = 73 = 'I'
 n
@@ -86,31 +86,31 @@ HI
 Echo an integer and its ASCII (simple I/O)
 
 echo.dumb
-```
+`
 i ! n c n .
-```
+`
 
 Prompts for an integer input, prints it as a number, newline, then as ASCII (value + 32), newline.
 
 Roadmap
 
-Loop constructs (e.g., [ and ])
-
-Dynamic tape growth
-
-Better error messages with line/column info
-
-String literals
-
-Optional “strict mode” to warn on unknown characters
+  Loop constructs (e.g., [ and ])
+  
+  Dynamic tape growth
+  
+  Better error messages with line/column info
+  
+  String literals
+  
+  Optional “strict mode” to warn on unknown characters
 
 Known Limitations
 
-No control flow yet (no loops/branches)
-
-Only single-digit increment/decrement literals (1–9, _1–_9)
-
-ASCII printing uses an offset of +32 by design
+  No control flow yet (no loops/branches)
+  
+  Only single-digit increment/decrement literals (1–9, _1–_9)
+  
+  ASCII printing uses an offset of +32 by design
 
 Author
 
