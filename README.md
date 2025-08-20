@@ -67,25 +67,32 @@ Examples
 Print “HI”
 
 hi.dumb
-`
+
+```
 9 9 9 9 4       c      # 36+4 = 40 → 40+32 = 72 = 'H'
 > 9 9 9 9 5     c      # 36+5 = 41 → 41+32 = 73 = 'I'
 n
 .
+```
 
+Note: Comments are not supported
 
 Run:
 
+`
 ./dumb hi.dumb
-
+`
 
 Output:
 
+`
 HI
+`
 
 Echo an integer and its ASCII (simple I/O)
 
 echo.dumb
+
 `
 i ! n c n .
 `
